@@ -1,0 +1,57 @@
+<%= form_for(@persona) do |f| %>
+  <% if @persona.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
+
+      <ul>
+      <% @persona.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3></h3>
+  <div class="col-xs-5 center-block" style="float:none"> 
+  <div class="form-group">
+ <%= f.text_field :nombre, class:"span4",placeholder:".Nombre Completo" %>  
+  
+     <%= f.label :Edad %>
+    <%= f.number_field :edad, class:"span2",placeholder:".Edad" %>
+    <% sexo = {'Sexo' =>'Sexo', 'Masculino' => 'Masculino','Femenino' =>'Femenino'} %>
+    <% lista = sexo.sort %>
+    <%= f.select :sexo, lista, :selected => 'Sexo' %>
+ <%= f.text_field :cedula, class:"span2",placeholder:".Cedula" %>
+      
+    <%= f.text_field :lugfam, class:"span2",placeholder:".Lugar En la familia" %>
+  </div>
+  
+  <div class="form-group">
+   
+    <%= f.text_field :nivestu, class:"span4",placeholder:".Estudios Realizados" %>
+   <%= f.text_field :titul, class:"span3",placeholder:".Titulo Obtenido" %>
+   <%= f.text_field :servsalud, class:"span2",placeholder:".Servicio De Salud" %>
+   <%= f.text_field :cajcomp, class:"span2",placeholder:".Caja De Compensacion" %>
+   <%= f.text_field :pension, class:"span2",placeholder:".Pensiones y Cesantias" %>
+  </div>
+  <%= f.text_field :etnia, class:"span2",placeholder:".Grupo Etnico" %>
+   <%= f.text_field :actiecom, class:"span2",placeholder:".Actividad Economica" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Grupos_Reconocidos_Por_la_Ley? %>
+    <%= f.check_box :gruporel %>
+    <%= f.text_field :cualgrup, class:"span2",placeholder:".Agregue el Grupo" %>
+  
+    <% active = {'Sectores' =>'Sectores', 'Agropecuario' => 'Agropecuario','Pesca' =>'Pesca','Industrial' =>'Industrial ','Servicios'=>'Servicios','Construccion'=>'Construccion','Mecanica'=>'Mecanica','Informatica'=>'Informatica','Educacion'=>'Educacion','ventas'=>'ventas','Otros'=>'Otros'} %>
+    <% act = active.sort %>
+    <%= f.label :En_que_sector_de_estos_le_gustaria_trabajar? %>
+    <%= f.select :sectortrab,act, :selected => 'Sectores' %>
+    <%= f.number_field :grupo_id,:value => $ides, class:"span2" %> 
+    <%= f.number_field :otra_id,:value => $ides, class:"span2" %>
+    <%= f.number_field :locate_id,:value => $ides, class:"span2" %>
+  </div>
+  <br>
+     <%= f.submit "siguiente", class: "btn btn-primary"  %>
+   
+
+  </div>
+<% end %>

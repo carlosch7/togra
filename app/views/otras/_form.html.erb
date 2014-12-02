@@ -1,0 +1,38 @@
+<%= form_for(@otra) do |f| %>
+  <% if @otra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@otra.errors.count, "error") %> prohibited this otra from being saved:</h2>
+
+      <ul>
+      <% @otra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3></h3>
+  <div class="col-xs-5 center-block" style="float:none"> 
+  <div class="form-group">
+    <% fute = {'Tipo De Ingresos Familiares' => 'Tipo De Ingresos Familiares', 'Agropecuearias' => 'Agropecuarias','Negocio Familiar' =>'Negocio Familiar','Empleado Privado' =>'Empleado Privado','Empleado Publico' =>'Empleado Publico','Trabajo Informal' =>'Trabajo Informal','Oficios Varios' => 'Oficios Varios', 'Desempleado' => 'Desempleado'} %>
+    <% li = fute.sort %>
+    <%= f.select :fuenteingre, li, :selected => 'Tipo De Ingresos Familiares' %>
+    <%= f.text_field :cualfuen, class:"span4",placeholder:".Describa el Tipo de Ingresos" %>
+  <%= f.label :Poseen_Cuentas_Bancarias? %>
+    <%= f.check_box :cuentab %>
+  <%= f.text_field :numcuent, class:"span3",placeholder:".Cuantas cuentas?" %>
+  <%= f.label :Poseen_Tarjeta_Debito_o_Credito? %>
+    <%= f.check_box :tarjetdc %>
+   <%= f.text_field :cuantarj, class:"span3",placeholder:".cuantas tarjetas?" %>
+  
+  <%= f.label :Ha_hecho_Algun_Prestamo? %>
+    <%= f.check_box :prestam %>
+    <% pres = {'Tipo De Prestamo' =>'Tipo De Prestamo', 'Vivienda' => 'Vivienda','Libre Inversion' =>'Libre Inversion','Vehículo' =>'Vehículo','Ninguno'=>'Ninguno'} %>
+    <% ptm = pres.sort %>
+    <%= f.select :tipoprestamo, ptm, :selected => 'Tipo De Prestamo' %>
+    <%= f.number_field :grupo_id,:value => $ides, class:"span2" %> 
+    <%= f.number_field :locate_id,:value => $locs, class:"span2" %> 
+ </div>
+  <br>
+     <%= f.submit "Entrar Datos", class: "btn btn-primary"  %>
+  </div>
+<% end %>

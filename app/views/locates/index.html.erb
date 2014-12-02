@@ -1,0 +1,33 @@
+<h1 class = "text-center">Zonas Donde Se Realiza La Cartografia</h1>
+<div class="CSSTableGenerator" >
+<table>
+  <thead>
+    <tr>
+      <th>Departamento</th>
+      <th>Municipio</th>
+      <th>Gobernador</th>
+      <th>Alcalde</th>
+      <th>Fecha inicio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locates.each do |locate| %>
+      <tr>
+        <td><%= locate.departamento %></td>
+        <td><%= locate.municipio %></td>
+        <td><%= locate.gobernador %></td>
+        <td><%= locate.alcalde %></td>
+        <td><%= locate.fecha_inicio %></td>
+        <td><%= link_to 'Show', locate %></td>
+        <td><%= link_to 'Edit', edit_locate_path(locate) %></td>
+        <td><%= link_to 'Destroy', locate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Locate', new_locate_path %>

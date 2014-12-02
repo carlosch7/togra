@@ -1,0 +1,66 @@
+<%= form_for(@grupo) do |f| %>
+  <% if @grupo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grupo.errors.count, "error") %> prohibited this grupo from being saved:</h2>
+
+      <ul>
+      <% @grupo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3></h3>
+  <div class="col-xs-5 center-block" style="float:none"> 
+  <div class="form-group">
+  <%= f.text_field :famil,class:"span3",placeholder:".Apellidos Familia" %>
+     
+    <%= f.text_field :dir, class:"span4",placeholder:".Direccion" %>  
+     
+    <%= f.text_field :tel, placeholder:".telefono" %> 
+    <% viviendas = {'Vivienda_tipo' =>'Vivienda_tipo', 'casa' => 'casa','apartamento' =>'apartamento','casa lote' =>'casa lote','finca'=>'finca'} %>
+    <% lista = viviendas.sort %>
+     <%= f.select :tipcasa, lista, :selected => '.Vivienda_tipo' %> 
+     
+        <%= f.text_field :estrato, class:"span2",placeholder:".Estrato?" %>
+  </div>
+    
+  
+ <%= f.label :Tiene_servicios_incluidos? %>
+    <%= f.check_box :serv %>
+  
+    <%= f.label :Cuales? %>
+    <%= f.text_area :tipserv, :cols =>100, rows: 4 %><br> 
+  <div class="form-group">
+    <%= f.text_field :habit, placeholder:" # de habitaciones" %>
+    <% pisos = {'Tipo de Pisos' =>'Tipo de Pisos', 'Tierra,Arena' => 'Tierra,Arena','Cemento,gravilla' =>'Cemento,gravilla','Madera' =>'Madera ','Baldosa'=>'Baldosa'} %>
+    <% pis = pisos.sort %>
+    <%= f.select :picasa,pis,:selected =>'Tipo de Pisos' %> 
+    <% pared = {'Tipo de Paredes' =>'Tipo de Paredes', 'Ladrillo' => 'Ladrillo','Madera' =>'Madera','Adobe,Bahareque' =>'Adobe,Bahareque ','Guadua'=>'Guadua','Zinc'=>'Zinc'} %>
+    <% par = pared.sort %>
+    <%= f.select :murcasa,par,:selected => 'Tipo de Paredes' %>
+ <% basura = {'Control de Basuras' =>'Control de Basuras', 'Reciclan' => 'Reciclan','Recoleccion Publica' =>'Recoleccion Publica','Se arroja a un rio o Quebrada' =>'Se arroja a un rio o Quebrada ','Se Quema'=>'Se Quema'} %>
+    <% bas = basura.sort %>
+    
+    <%= f.select :basura,bas,:selected => 'Control de Basuras' %>
+  <% cocin = {'Equipos de Cocina' =>'Equipos de Cocina', 'Completo' => 'Completo','Incompleto' =>'Incompleto'} %>
+    <% co = cocin.sort %> 
+    <%= f.select :eqcoc, co,:selected => 'Equipos de Cocina'%> 
+  </div>
+  <div class="form-group">
+    <% sala = {'Equipo de Sala' =>'Equipo de Sala', 'Completo' => 'Completo','Incompleto' =>'Incompleto'} %>
+    <% sal = sala.sort %> 
+    <%= f.select :eqsal, sal,:selected => 'Equipo de Sala'%> 
+   <% habit = {'Equipo de Habitacion' =>'Equipo de Habitacion', 'Completo' => 'Completo','Incompleto' =>'Incompleto'} %>
+    <% ht = habit.sort %> 
+    <%= f.select :eqhabi,ht,:selected => 'Equipo de Habitacion' %>
+  <% comed = {'Equipo de Comedor' =>'Equipo de Comedor', 'Completo' => 'Completo','Incompleto' =>'Incompleto'} %>
+    <% cmd = comed.sort %> 
+    
+    <%= f.select :eqcom,cmd,:selected => 'Equipo de Comedor' %>
+    <%= f.number_field :locate_id,:value => $locs, class:"span2" %>
+  </div>
+  <br>
+     <%= f.submit "siguiente", class: "btn btn-primary"  %>
+  </div>
+<% end %>

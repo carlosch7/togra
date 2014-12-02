@@ -1,0 +1,30 @@
+<%= form_for(@locate) do |f| %>
+  <% if @locate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@locate.errors.count, "error") %> prohibited this locate from being saved:</h2>
+
+      <ul>
+      <% @locate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3></h3>
+  <div class="col-xs-5 center-block" style="float:none"> 
+  <div class="form-group">
+    <%= f.text_field :departamento, class:"span2",placeholder:".Departamento" %>
+    <%= f.text_field :municipio, class:"span2",placeholder:".Municipio" %>
+    
+    <%= f.text_field :gobernador, class:"span2",placeholder:".Gobernador" %>
+  
+    <%= f.text_field :alcalde , class:"span2",placeholder:".Alcalde" %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio %>
+    <%= f.date_select :fecha_inicio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

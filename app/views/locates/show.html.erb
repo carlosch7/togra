@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= @locate.departamento %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @locate.municipio %>
+</p>
+
+<p>
+  <strong>Gobernador:</strong>
+  <%= @locate.gobernador %>
+</p>
+
+<p>
+  <strong>Alcalde:</strong>
+  <%= @locate.alcalde %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @locate.fecha_inicio %>
+</p>
+
+<%= link_to 'Edit', edit_locate_path(@locate) %> |
+<%= link_to 'Back', locates_path %>

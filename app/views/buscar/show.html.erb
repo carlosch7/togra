@@ -1,0 +1,98 @@
+<table border="1" style="width: 1300px;">
+  <% if @ms==1 %>
+   <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Grup Familiar</th>
+      <th>Municipio</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Edad</th>
+      <th>Nivel de Estudio</th>
+      <th>Titulo</th>
+      <th>Servicio de Salud</th>
+      <th>Caja de compensacion</th>
+      <th>Pensiones </th>
+      <th>Actividad Economica</th>
+      <th>Grupo Etnico</th>
+      <th>Grupos Reconocidos</th>
+    <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @person.each  do |n| %>
+      <tr>
+        <td><%= n.nombre %></td>
+        <td><%= n.grupo.famil %></td>
+        <td><%= n.locate.municipio %></td>
+        <td><%= n.grupo.dir %></td>
+        <td><%= n.grupo.tel %></td>
+        <td><%= n.edad %></td>
+        <td><%= n.nivestu %></td>
+        <td><%= n.titul %></td>
+        <td><%= n.servsalud %></td>
+        <td><%= n.cajcomp %></td>
+        <td><%= n.pension %></td>
+        <td><%= n.actiecom %></td>
+        <td><%= n.etnia %></td>
+        <td><%= n.cualgrup %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  <% else %>
+  <thead>
+    <tr>
+      <th>Grupo Familiar</th>
+      <th>Departamento</th>
+      <th>Municipio</th>
+      <th>No Integrantes</th>
+      <th>Vivienda Tipo</th>
+      <th>No Habitaciones</th>
+      <th>Piso Vivienda</th>
+      <th>Muro Vivienda</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Estrato</th>
+      <th>Servicios</th>
+      <th>Equipo Cocina</th>
+      <th>Equipo Sala</th>
+      <th>Equipo Comedor</th>
+      <th>Equipo habitacion </th>
+      <th>Prestamos </th>
+     
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @famil.each  do |g| %>
+      <tr>
+        <td><%= g.famil %></td>
+        <td><%= g.locate.departamento %></td>
+        <td><%= g.locate.municipio %></td>
+        <td><%= g.personas.count %></td>
+        <td> <%= g.tipcasa %> </td>
+        <td><%= g.habit %></td>
+        <td><%= g.picasa %></td>
+        <td><%= g.murcasa %></td>
+        <td><%= g.dir %></td>
+        <td><%= g.tel %></td>
+        <td><%= g.estrato %></td>
+        <td><%= g.tipserv %></td>
+        <td><%= g.eqcoc %></td>
+        <td><%= g.eqsal %></td>
+        <td><%= g.eqcom %></td>
+        <td><%= g.eqhabi %></td>
+        <td><%= g.otra.tipoprestamo %></td>
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+  <% end %>
+</table>
+
+<br>  
+ 
+<%= link_to 'Nueva busqueda', :controller => "buscar", :action => "form" %>

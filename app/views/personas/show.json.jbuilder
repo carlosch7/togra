@@ -1,0 +1,1 @@
+json.extract! @persona, :id, :nombre, :edad, :sexo, :cedula, :lugfam, :nivestu, :titul, :servsalud, :cajcomp, :pension, :etnia, :actiecom, :gruporel, :cualgrup, :sectortrab, :grupo_id, :otra_id, :created_at, :updated_at

@@ -1,0 +1,43 @@
+<h1 class = "text-center">Otros Datos Familiares</h1>
+
+<div class="CSSTableGenerator" >
+
+<table>
+  <thead>
+    <tr>
+      <th>Fuenteingre</th>
+      <th>Cualfuen</th>
+      <th>Cuentab</th>
+      <th>Numcuent</th>
+      <th>Tarjetdc</th>
+      <th>Cuantarj</th>
+      <th>Prestam</th>
+      <th>Tipoprestamo</th>
+      <th>Grupo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @otras.each do |otra| %>
+      <tr>
+        <td><%= otra.fuenteingre %></td>
+        <td><%= otra.cualfuen %></td>
+        <td><%= otra.cuentab %></td>
+        <td><%= otra.numcuent %></td>
+        <td><%= otra.tarjetdc %></td>
+        <td><%= otra.cuantarj %></td>
+        <td><%= otra.prestam %></td>
+        <td><%= otra.tipoprestamo %></td>
+        <td><%= otra.grupo_id %></td>
+        <td><%= link_to 'Show', otra %></td>
+        <td><%= link_to 'Edit', edit_otra_path(otra) %></td>
+        <td><%= link_to 'Destroy', otra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Otra', new_otra_path %>

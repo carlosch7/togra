@@ -1,0 +1,17 @@
+
+<p>
+     <strong>Resultado de la Consulta:</strong></p>
+<% if @buss==1 %>     
+ Personas Fuera de Grupos Reconocidos Por Ley =  <%= @numpr %><br>
+ Personas en Grupos Reconocidos Por la ley =  <%= @numpt %><br>
+<%end%>
+
+<% if @buss==2 %> 
+  Familias sin servicios = <%= @sevp %><br>
+  Familias con servicios = <%= @sevpn %><br>
+<%end%> 
+<br>   
+<%= link_to 'Nueva busqueda', :controller => "buscar", :action => "form" %>
+
+
+

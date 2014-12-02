@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cartografia Social Municipal</title>
+  <%= stylesheet_link_tag 'css/estilos.css' %>
+</head>
+<body>
+	<div id="contenedor">
+
+	<!-- Cabecera -->
+	<header id="cabecera">
+    </header>
+    <nav id="menu">
+    	<ul>
+        	<li><%= link_to(image_tag("alcal.png",  :class =>"image",:id=>"icono1"),:ingreso) %> 
+                               
+            </li>
+            
+            
+            <li><%= link_to(image_tag("encu.png",  :class =>"image",:id=>"icono2"), :login) %>
+            
+            </li>
+            <li><%= link_to(image_tag("cont.png",  :class =>"image",:id=>"icono3"),:login) %>
+                 
+               
+                
+            </li>
+            
+                   
+            
+        </ul>
+    </nav>
+    <footer id="piepagina">
+        <p class="textopie">© Copyright <a href="#" class="enlacecpw">websecurity-sa.com</a> Todos los derechos reservados el logo y el nombre son marcas registradas<br>
+        CALLE  32 No. 77-88. Bogota Colombia<br>
+        Telfs. 3192250388 / 3213302822<br>
+        desarrollo@websecurity-sa.com</p>
+        <ul class="sociales">
+            <li><a href="#"><img src="/stylesheets/imagenes/facebook.jpg" width="38" height="38"></a></li>
+            <li><a href="#"><img src="/stylesheets/imagenes/twitter.jpg" width="38" height="38"></a></li>
+            <li><a href="#"><img src="/stylesheets/imagenes/youtube.jpg" width="38" height="38"></a></li>
+            <li><a href="#"><img src="/stylesheets/imagenes/blog.jpg" width="38" height="38"></a></li>
+        </ul>
+    </footer>
+
+<%= yield %>
+
+</body>
+</html>

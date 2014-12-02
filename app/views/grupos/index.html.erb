@@ -1,0 +1,55 @@
+<h1 class = "text-center">Entrada de Datos Por Grupo Familiar</h1>
+<div class="CSSTableGenerator" >
+<table>
+  <thead>
+    <tr>
+      <th>Famil</th>
+      <th>Integrantes</th>
+      <th>Dir</th>
+      <th>Tel</th>
+      <th>Tipcasa</th>
+      <th>Estrato</th>
+      <th>Serv</th>
+      <th>Tipserv</th>
+      <th>Habit</th>
+      <th>Picasa</th>
+      <th>Murcasa</th>
+      <th>Basura</th>
+      <th>Eqcoc</th>
+      <th>Eqsal</th>
+      <th>Eqhabi</th>
+      <th>Eqcom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grupos.each do |grupo| %>
+      <tr>
+        <td><%= grupo.famil %></td>
+        <td><%= grupo.personas.count %></td>
+        <td><%= grupo.dir %></td>
+        <td><%= grupo.tel %></td>
+        <td><%= grupo.tipcasa %></td>
+        <td><%= grupo.estrato %></td>
+        <td><%= grupo.serv %></td>
+        <td><%= grupo.tipserv %></td>
+        <td><%= grupo.habit %></td>
+        <td><%= grupo.picasa %></td>
+        <td><%= grupo.murcasa %></td>
+        <td><%= grupo.basura %></td>
+        <td><%= grupo.eqcoc %></td>
+        <td><%= grupo.eqsal %></td>
+        <td><%= grupo.eqhabi %></td>
+        <td><%= grupo.eqcom %></td>
+        <td><%= link_to 'Show', grupo %></td>
+        <td><%= link_to 'Edit', edit_grupo_path(grupo) %></td>
+        <td><%= link_to 'Destroy', grupo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Grupo', new_grupo_path %>

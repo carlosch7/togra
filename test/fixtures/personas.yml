@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  edad: 1
+  sexo: MyString
+  cedula: MyString
+  lugfam: MyString
+  nivestu: MyString
+  titul: MyString
+  servsalud: MyString
+  cajcomp: MyString
+  pension: MyString
+  etnia: MyString
+  actiecom: MyString
+  gruporel: false
+  cualgrup: MyString
+  sectortrab: MyString
+  grupo_id: 1
+  otra_id: 1
+  locate_id: 1
+
+two:
+  nombre: MyString
+  edad: 1
+  sexo: MyString
+  cedula: MyString
+  lugfam: MyString
+  nivestu: MyString
+  titul: MyString
+  servsalud: MyString
+  cajcomp: MyString
+  pension: MyString
+  etnia: MyString
+  actiecom: MyString
+  gruporel: false
+  cualgrup: MyString
+  sectortrab: MyString
+  grupo_id: 1
+  otra_id: 1
+  locate_id: 1

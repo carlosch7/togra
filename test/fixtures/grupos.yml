@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  famil: MyString
+  dir: MyString
+  tel: MyString
+  tipcasa: MyString
+  estrato: MyString
+  serv: false
+  tipserv: MyString
+  habit: MyString
+  picasa: MyString
+  murcasa: MyString
+  basura: MyString
+  eqcoc: MyString
+  eqsal: MyString
+  eqhabi: MyString
+  eqcom: MyString
+  locate_id: 1
+
+two:
+  famil: MyString
+  dir: MyString
+  tel: MyString
+  tipcasa: MyString
+  estrato: MyString
+  serv: false
+  tipserv: MyString
+  habit: MyString
+  picasa: MyString
+  murcasa: MyString
+  basura: MyString
+  eqcoc: MyString
+  eqsal: MyString
+  eqhabi: MyString
+  eqcom: MyString
+  locate_id: 1

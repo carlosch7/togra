@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departamento: MyString
+  municipio: MyString
+  gobernador: MyString
+  alcalde: MyString
+  fecha_inicio: 2014-12-01
+
+two:
+  departamento: MyString
+  municipio: MyString
+  gobernador: MyString
+  alcalde: MyString
+  fecha_inicio: 2014-12-01

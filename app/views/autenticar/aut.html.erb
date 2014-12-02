@@ -1,0 +1,21 @@
+<%= form_tag({:controller => "autenticar", :action => "aut"}, :method => "post") do %>
+<div class="form-4">
+	<h2> Iniciar sesión </h2>
+	<%= label_tag "Departamento", "Departamento" %>
+   <br />
+   <%= text_field_tag "Departamento", "", :required => "required",placeholder: 'Departamento', class: 'pull-left input-small' %>
+   <%= label_tag "nombre_usuario", "Nombre de usuario" %>
+   <br />
+   <%= text_field_tag "nombre_usuario", "", :required => "required",placeholder: 'Nombre de usuario', class: 'pull-left input-small' %>
+   <br />
+   <%= label_tag "contrasena", "Contraseña" %>
+   <br />
+   <%= password_field_tag "contrasena", "", :required => "required",placeholder: 'Contraseña', class: 'pull-left input-small' %>
+   <br />
+   <%= submit_tag "Ingresar" %>
+<% end %>
+<% if @error_login %>
+ <div style="color: #f00;"> El nombre de usuario o la contraseña son incorrectos. </div>
+ </div>
+ <%= @pass %>
+<% end %>
